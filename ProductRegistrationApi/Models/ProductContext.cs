@@ -10,6 +10,3 @@ namespace ProductRegistrationApi.Models
         : base(options) { }
   }
 }
-
-
-
