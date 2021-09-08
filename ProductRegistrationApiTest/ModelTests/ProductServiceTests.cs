@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-
 namespace ProductRegistrationApiTest.ModelTests
 {
   public class ProductServiceTests
@@ -26,7 +25,7 @@ namespace ProductRegistrationApiTest.ModelTests
     }
 
     [Fact]
-    public void AddProductAndSalePriceTest()
+    public void AddProductAndListProductsTest()
     {
       List<Product> expected = new List<Product>();
       List<Product> actual = new List<Product>();
@@ -54,7 +53,6 @@ namespace ProductRegistrationApiTest.ModelTests
          Description = "Descrição 1",
          CostPrice = 100f
        });
-      actual = _productService.ListProducts().ToList();
 
       // CASO 2
       // valores esperados
@@ -79,7 +77,6 @@ namespace ProductRegistrationApiTest.ModelTests
          Description = "Descrição 2",
          CostPrice = 100f
        });
-      actual = _productService.ListProducts().ToList();
 
       // CASO 3
       // valores esperados
@@ -104,6 +101,7 @@ namespace ProductRegistrationApiTest.ModelTests
          Description = "Descrição 3 softplayer",
          CostPrice = 100f
        });
+
       actual = _productService.ListProducts().ToList();
 
       for (int i = 0; i < actual.Count; i++)
@@ -117,6 +115,5 @@ namespace ProductRegistrationApiTest.ModelTests
         Assert.Equal(expected[i].SalePrice, actual[i].SalePrice);
       }
     }
-
   }
 }
