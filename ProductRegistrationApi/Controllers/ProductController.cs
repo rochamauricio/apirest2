@@ -19,7 +19,7 @@ namespace ProductRegistrationApi.Controllers
     [HttpGet]
     public ActionResult<List<Product>> GetProductItems()
     {
-      return _productService.ListProducts();
+      return Ok(_productService.ListProducts());
     }
 
     // Post: http://localhost:5002/api2/insert
