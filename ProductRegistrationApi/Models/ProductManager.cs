@@ -5,7 +5,7 @@ namespace ProductRegistrationApi.Models
 {
   public class ProductManager : IProductManager
   {
-    public virtual float GetSalePrice(string category, float cost)
+    public float GetSalePrice(string category, float cost)
     {
       string url = "http://localhost:5000/api1/price?category=" + category + "&cost=" + cost;
       var request = WebRequest.CreateHttp(url);
